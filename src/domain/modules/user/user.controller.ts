@@ -10,7 +10,7 @@ export class UserController {
 	}
 
 	async getById(c: Context) {
-		const id = Number(c.req.param("id")); 
+		const id = Number(c.req.param("id"));
 		if (Number.isNaN(id)) {
 			return c.json({ message: "Invalid ID" });
 		}
@@ -46,7 +46,6 @@ export class UserController {
 	async login(c: Context) {
 		const { email, senha } = await c.req.json();
 		const user = await this.userService.loginUser(email, senha);
-		console.log(user)
 		return c.json(user);
 	}
 }
