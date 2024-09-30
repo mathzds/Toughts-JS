@@ -1,7 +1,7 @@
 import { Jwt } from "hono/utils/jwt";
 
-function authGuard(email: string, password: string) {
-	return Jwt.sign({ email, password }, "secret", "HS256");
+function authGuard(email: string, id: number) {
+	return Jwt.sign({ email, id }, "secret", "HS256");
 }
 
 export default authGuard;

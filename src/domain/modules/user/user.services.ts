@@ -38,6 +38,6 @@ export class UserService {
 
 		if (!user) throw new Error("User not found");
 
-		return authGuard(user.email, user.senha);
+		return authGuard(user.email, user.id);
 	}
 }
