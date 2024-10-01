@@ -1,18 +1,10 @@
-Claro! Aqui está o conteúdo formatado para você copiar e colar diretamente no seu `README.md`:
-
-```markdown
-# API Documentation
-
 ## Início Rápido
 
 Para iniciar o projeto, execute os seguintes comandos:
 
-```
-npm install
-npm run dev
-```
-
-Em seguida, abra o navegador e acesse: [http://localhost:3000](http://localhost:3000)
+- npm install
+- npm run dev
+- Em seguida, abra o navegador e acesse: [http://localhost:3000](http://localhost:3000)
 
 ## Users
 
