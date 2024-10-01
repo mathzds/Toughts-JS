@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
-import { UserModel } from "./User"; 
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm";
+import { ResponseModel } from "./Response"; 
+import { UserModel } from "./User";
 
 @Entity()
 export class ToughtModel {
@@ -11,4 +12,7 @@ export class ToughtModel {
 
     @ManyToOne(() => UserModel, (user) => user.toughts)
     user!: UserModel;
+
+    @OneToMany(() => ResponseModel, (response) => response.tought)
+    responses!: ResponseModel[];
 }

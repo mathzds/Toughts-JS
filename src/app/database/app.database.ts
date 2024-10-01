@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
 import { UserModel } from "../models/User";
 import { ToughtModel } from "../models/Tought";
-
+import { ResponseModel } from "../models/Response";
 
 export const AppDataSource = new DataSource({
 	type: "postgres",
@@ -10,16 +10,13 @@ export const AppDataSource = new DataSource({
 	username: "test",
 	password: "test",
 	database: "test",
-		synchronize: true,
-		logging: true,
-		entities: [
-			UserModel,
-			ToughtModel
-		],
-		subscribers: [],
-		migrations: [],
-	});
-	
+	synchronize: true,
+	logging: true,
+	entities: [UserModel, ToughtModel, ResponseModel],
+	subscribers: [],
+	migrations: [],
+});
+
 export default function databaseHandler() {
 	AppDataSource.initialize()
 		.then(() => {

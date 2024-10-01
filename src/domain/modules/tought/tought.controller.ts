@@ -38,4 +38,38 @@ export class ToughtController {
 		await this.toughtService.deleteTought(id);
 		return c.text("Deleted");
 	}
+
+	async createResponse(c: Context) {
+		const toughtId = Number(c.req.param("toughtId"));
+
+		const requestData = await c.req.json();
+
+		const userId = Number(requestData.userId);
+
+		if (!userId) {
+			return c.text("User ID is required", 400);
+		}
+
+		const newResponseData = {
+			content: requestData.content,
+		};
+
+		try {
+			const newResponse = await this.toughtService.createResponse(
+				toughtId,
+				newResponseData,
+				userId,
+			);
+			return c.json(newResponse, 201);
+		} catch (error) {
+			console.error("Error creating response:", error);
+			return c.text("Failed to create response", 500);
+		}
+	}
+
+	async getResponses(c: Context) {
+		const toughtId = Number(c.req.param("toughtId"));
+		const responses = await this.toughtService.getResponsesByToughtId(toughtId);
+		return c.json(responses);
+	}
 }
