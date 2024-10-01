@@ -7,7 +7,7 @@ npm run dev
 open http://localhost:3000
 ```
 
-- Users
+## Users
 * Create
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -49,7 +49,7 @@ Content-Type: application/json
 GET http://localhost:3000/users/auth/me
 Authorization: Bearer <seu_token_aqui>
 
-- Tought
+## Tought
 * Post tought
 POST http://localhost:3000/toughts
 Content-Type: application/json
