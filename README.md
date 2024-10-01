@@ -7,7 +7,7 @@ Claro! Aqui está o conteúdo formatado para você copiar e colar diretamente no
 
 Para iniciar o projeto, execute os seguintes comandos:
 
-```bash
+```
 npm install
 npm run dev
 ```
